@@ -47,24 +47,6 @@ export default function AboutSection() {
         </div>
       </div>
 
-      <div className="about-interests">
-        <h3>Technologies I’m drawn to</h3>
-        <ul aria-label="Technical interests">
-          {[
-            "JavaScript",
-            "React",
-            "Next.js",
-            "Java",
-            "HTML",
-            "CSS",
-            "SQL",
-            "Adobe technologies",
-          ].map((technology) => (
-            <li key={technology}>{technology}</li>
-          ))}
-        </ul>
-      </div>
-
       <div className="about-mindset">
         <div className="about-mindset-heading">
           <div>

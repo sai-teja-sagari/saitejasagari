@@ -941,7 +941,6 @@ html[data-theme="dark"] .portfolio-main .about-section {
 
 .portfolio-main .about-masthead p,
 .portfolio-main .about-eyebrow,
-.portfolio-main .about-interests h3,
 .portfolio-main .about-pillar-label {
   margin: 0;
   font-size: 9px;
@@ -1000,42 +999,6 @@ html[data-theme="dark"] .portfolio-main .about-section {
 .portfolio-main .about-biography strong {
   color: var(--foreground);
   font-weight: 650;
-}
-
-.portfolio-main .about-interests {
-  display: grid;
-  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(36px, 7vw, 112px);
-  align-items: start;
-  padding-block: 18px;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.portfolio-main .about-interests h3 {
-  color: var(--muted);
-}
-
-.portfolio-main .about-interests ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px 0;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.portfolio-main .about-interests li {
-  color: var(--foreground);
-  font-size: 12px;
-  line-height: 1.7;
-  white-space: nowrap;
-}
-
-.portfolio-main .about-interests li + li::before {
-  margin-inline: 10px;
-  color: var(--about-accent);
-  content: "·";
 }
 
 .portfolio-main .about-mindset {
@@ -1147,8 +1110,7 @@ html[data-theme="dark"] .portfolio-main .about-section {
     width: min(100% - 56px, 760px);
   }
 
-  .portfolio-main .about-introduction,
-  .portfolio-main .about-interests {
+  .portfolio-main .about-introduction {
     grid-template-columns: minmax(0, 1fr);
     gap: 28px;
   }
@@ -1209,22 +1171,6 @@ html[data-theme="dark"] .portfolio-main .about-section {
     font-size: 13px;
   }
 
-  .portfolio-main .about-interests {
-    gap: 12px;
-    padding-block: 16px;
-  }
-
-  .portfolio-main .about-interests ul {
-    gap: 4px 0;
-  }
-
-  .portfolio-main .about-interests li {
-    white-space: normal;
-  }
-
-  .portfolio-main .about-interests li + li::before {
-    margin-inline: 7px;
-  }
 
   .portfolio-main .about-mindset {
     padding-top: 38px;
