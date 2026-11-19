@@ -158,24 +158,57 @@ export default function Home() {
           id="work"
           aria-labelledby="projects-title"
         >
-          <div className="section-heading projects-heading">
-            <p className="section-kicker">04 / FEATURED WEBSITE</p>
-            <h2 id="projects-title">{featuredProject.title}</h2>
-          </div>
           <div className="project-grid">
             <article className="project-card">
-              <div className="project-meta">
-                <span>{featuredProject.type}</span>
+              <div className="project-image">
+                <Image
+                  src="/veduka-project.jpg"
+                  alt="Veduka by Dheeraj wedding photography"
+                  fill
+                  sizes="(max-width: 760px) 100vw, 50vw"
+                />
+                <div className="project-image-overlay" />
+                <div className="project-image-copy">
+                  <h2 id="projects-title">
+                    Veduka
+                    <br />
+                    by Dheeraj
+                  </h2>
+                  <p>Wedding photography<br />&amp; event styling</p>
+                </div>
               </div>
-              <p>{featuredProject.summary}</p>
-              <a
-                className="project-site-link"
-                href={featuredProject.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Visit vedukabydheeraj.in <span aria-hidden="true">↗</span>
-              </a>
+
+              <div className="project-details">
+                <p className="project-type">Personal Project</p>
+                <h3>{featuredProject.title}</h3>
+                <p className="project-summary">{featuredProject.summary}</p>
+                <ul className="project-technologies" aria-label="Technologies used">
+                  {featuredProject.technologies.map((technology) => (
+                    <li key={technology}>{technology}</li>
+                  ))}
+                </ul>
+                <div className="project-actions">
+                  <a
+                    className="project-site-link"
+                    href={featuredProject.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Visit Website <span aria-hidden="true">↗</span>
+                  </a>
+                  <a
+                    className="project-code-link"
+                    href={featuredProject.codeUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.48.09.65-.21.65-.47v-1.86c-2.65.58-3.21-1.12-3.21-1.12-.43-1.1-1.06-1.39-1.06-1.39-.87-.59.07-.58.07-.58.96.07 1.47.99 1.47.99.85 1.46 2.24 1.04 2.79.79.09-.62.33-1.04.61-1.28-2.12-.24-4.35-1.06-4.35-4.72 0-1.04.37-1.9.99-2.57-.1-.24-.43-1.22.09-2.54 0 0 .81-.26 2.63 1a9.1 9.1 0 0 1 4.79 0c1.82-1.26 2.63-1 2.63-1 .52 1.32.19 2.3.09 2.54.62.67.99 1.53.99 2.57 0 3.67-2.23 4.47-4.36 4.71.34.3.65.88.65 1.78v2.64c0 .26.17.57.66.47A9.5 9.5 0 0 0 12 2.5Z" />
+                    </svg>
+                    View Code
+                  </a>
+                </div>
+              </div>
             </article>
           </div>
         </section>

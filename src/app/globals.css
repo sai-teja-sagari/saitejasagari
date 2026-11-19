@@ -1418,10 +1418,10 @@ html[data-theme="dark"] .portfolio-main .about-section {
 
 .portfolio-main .project-card {
   min-width: 0;
-  max-width: 860px;
-  display: flex;
-  flex-direction: column;
-  padding: clamp(22px, 3.2vw, 42px);
+  min-height: clamp(390px, 43vw, 520px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: hidden;
   border: 1px solid var(--line);
   background: var(--surface);
   transition: border-color 180ms ease, transform 180ms ease;
@@ -1432,43 +1432,135 @@ html[data-theme="dark"] .portfolio-main .about-section {
   border-color: var(--accent);
 }
 
-.portfolio-main .project-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  color: var(--muted);
-  font-size: 10px;
-  letter-spacing: 0.11em;
+.portfolio-main .project-image {
+  position: relative;
+  min-width: 0;
+  min-height: 390px;
+  overflow: hidden;
+  background: #101010;
+}
+
+.portfolio-main .project-image img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.portfolio-main .project-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12, 12, 12, 0.02) 22%, rgba(12, 12, 12, 0.82) 100%);
+}
+
+.portfolio-main .project-image-copy {
+  position: absolute;
+  left: clamp(24px, 4vw, 48px);
+  bottom: clamp(24px, 4vw, 48px);
+  z-index: 1;
+  color: #fff;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.28);
+}
+
+.portfolio-main .project-image-copy h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 5vw, 72px);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
+}
+
+.portfolio-main .project-image-copy p {
+  margin: 24px 0 0;
+  font-size: clamp(12px, 1.3vw, 16px);
+  letter-spacing: 0.15em;
+  line-height: 1.6;
   text-transform: uppercase;
 }
 
-.portfolio-main .project-meta span:last-child {
-  text-align: right;
+.portfolio-main .project-details {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(30px, 4.5vw, 64px);
 }
 
-.portfolio-main .project-card > p {
-  max-width: 680px;
-  margin: 18px 0 0;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.8;
+.portfolio-main .project-type {
+  margin: 0 0 20px;
+  color: #725632;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 700;
 }
 
-.portfolio-main .project-site-link {
-  width: fit-content;
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 16px;
-  color: var(--foreground);
-  font-size: 13px;
+.portfolio-main .project-details h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 4.2vw, 58px);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.portfolio-main .project-summary {
+  max-width: 580px;
+  margin: 20px 0 0;
+  color: #666;
+  font-size: clamp(15px, 1.45vw, 19px);
+  line-height: 1.55;
+}
+
+.portfolio-main .project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  color: #555;
+  font-size: clamp(13px, 1.25vw, 16px);
   font-weight: 600;
 }
 
-.portfolio-main .project-site-link span {
-  color: var(--accent);
+.portfolio-main .project-technologies li {
+  white-space: nowrap;
+}
+
+.portfolio-main .project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.portfolio-main .project-site-link,
+.portfolio-main .project-code-link {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 24px;
+  border: 1px solid #2b2b2b;
+  border-radius: 999px;
+  color: #2b2b2b;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.portfolio-main .project-site-link {
+  min-width: 190px;
+  border-color: #171717;
+  background: #171717;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-main .project-code-link svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
 
 .portfolio-main .contact-section {
@@ -1700,6 +1792,52 @@ html[data-theme="dark"] .portfolio-main .footer-brand img {
   .portfolio-main .experience-entry {
     grid-template-columns: minmax(130px, 0.42fr) minmax(0, 1.58fr);
   }
+
+  .portfolio-main .project-card {
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .portfolio-main .project-image {
+    min-height: 0;
+    aspect-ratio: 2 / 1;
+  }
+
+  .portfolio-main .project-details {
+    padding: clamp(26px, 5vw, 44px);
+  }
+
+  .portfolio-main .project-details h3 {
+    font-size: clamp(38px, 6vw, 54px);
+  }
+
+  .portfolio-main .project-summary {
+    max-width: 680px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 990px) {
+  .portfolio-main .project-card {
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .portfolio-main .project-image {
+    min-height: 0;
+    aspect-ratio: 2 / 1;
+  }
+
+  .portfolio-main .project-details {
+    padding: clamp(26px, 5vw, 44px);
+  }
+
+  .portfolio-main .project-details h3 {
+    font-size: clamp(38px, 6vw, 54px);
+  }
+
+  .portfolio-main .project-summary {
+    max-width: 680px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1781,8 +1919,53 @@ html[data-theme="dark"] .portfolio-main .footer-brand img {
     padding-block: 22px;
   }
 
-  .portfolio-main .project-card {
-    padding: 23px;
+  .portfolio-main .project-image {
+    aspect-ratio: 1.45 / 1;
+  }
+
+  .portfolio-main .project-image-copy {
+    left: 18px;
+    bottom: 18px;
+  }
+
+  .portfolio-main .project-image-copy h2 {
+    font-size: clamp(38px, 10.5vw, 48px);
+  }
+
+  .portfolio-main .project-image-copy p {
+    margin-top: 16px;
+    font-size: 10px;
+  }
+
+  .portfolio-main .project-details {
+    padding: 26px 22px 28px;
+  }
+
+  .portfolio-main .project-details h3 {
+    font-size: clamp(34px, 9vw, 46px);
+  }
+
+  .portfolio-main .project-summary {
+    font-size: 15px;
+  }
+
+  .portfolio-main .project-technologies {
+    gap: 8px 16px;
+    font-size: 13px;
+  }
+
+  .portfolio-main .project-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .portfolio-main .project-site-link,
+  .portfolio-main .project-code-link {
+    width: 100%;
+    min-width: 0;
+    min-height: 50px;
   }
 
   .portfolio-main .contact-links a {

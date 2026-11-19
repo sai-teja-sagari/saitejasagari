@@ -122,6 +122,8 @@ export const featuredProject = {
   type: "Photography & event styling website",
   title: "Veduka by Dheeraj",
   url: "https://vedukabydheeraj.in",
+  codeUrl: "https://github.com/sai-teja-sagari/vedukabydheeraj",
+  technologies: ["Next.js", "React", "Tailwind CSS", "SEO"],
   summary:
     "A wedding photography and event styling website based in Tandur, Telangana. It showcases wedding, pre-wedding, maternity, and celebration photography and films, with service details and enquiry options.",
 };
