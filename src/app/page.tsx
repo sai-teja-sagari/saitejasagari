@@ -193,13 +193,6 @@ export default function Home() {
             <a href="mailto:saitejasagari2002@gmail.com">
               saitejasagari2002@gmail.com <span aria-hidden="true">↗</span>
             </a>
-            <a
-              href="https://www.linkedin.com/in/sai-teja-sagari"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn <span aria-hidden="true">↗</span>
-            </a>
           </div>
         </section>
 
