@@ -1487,7 +1487,7 @@ html[data-theme="dark"] .portfolio-main .about-section {
 
 .portfolio-main .project-type {
   margin: 0 0 20px;
-  color: #725632;
+  color: var(--accent);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 16px;
   font-weight: 700;
@@ -1505,7 +1505,7 @@ html[data-theme="dark"] .portfolio-main .about-section {
 .portfolio-main .project-summary {
   max-width: 580px;
   margin: 20px 0 0;
-  color: #666;
+  color: var(--muted);
   font-size: clamp(15px, 1.45vw, 19px);
   line-height: 1.55;
 }
@@ -1517,7 +1517,7 @@ html[data-theme="dark"] .portfolio-main .about-section {
   margin: 24px 0 0;
   padding: 0;
   list-style: none;
-  color: #555;
+  color: var(--muted);
   font-size: clamp(13px, 1.25vw, 16px);
   font-weight: 600;
 }
@@ -1541,19 +1541,20 @@ html[data-theme="dark"] .portfolio-main .about-section {
   justify-content: center;
   gap: 12px;
   padding: 0 24px;
-  border: 1px solid #2b2b2b;
+  border: 1px solid color-mix(in srgb, var(--foreground) 34%, transparent);
   border-radius: 999px;
-  color: #2b2b2b;
+  color: var(--foreground);
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
 .portfolio-main .project-site-link {
   min-width: 190px;
-  border-color: #171717;
-  background: #171717;
-  color: #fff;
+  border-color: var(--foreground);
+  background: var(--foreground);
+  color: var(--background);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
 }
 
